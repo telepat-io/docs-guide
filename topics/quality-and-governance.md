@@ -82,7 +82,7 @@ Repositories adopting this standard must enforce:
 
 Repositories adopting this standard should enforce:
 
-1. i18n config includes `en` and `zh-Hans` (or documented `cn` exception).
+1. i18n config includes `en` and `zh-CN` (or documented legacy `zh-Hans` exception).
 2. English canonical docs remain in repo-root `docs/`.
 3. Chinese translations exist under `i18n/<locale>/docusaurus-plugin-content-docs/current/`.
 4. Docs build and broken-link checks succeed for localized output.

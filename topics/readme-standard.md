@@ -34,19 +34,19 @@ For multilingual repositories, add a language switcher link block at the top of 
 Required baseline locales:
 
 - English (default): `README.md`
-- Simplified Chinese: `README.zh-Hans.md`
+- Simplified Chinese: `README.zh-CN.md`
 
-Required top-of-file switcher example for en + zh-Hans:
+Required top-of-file switcher example for en + zh-CN:
 
 ```md
-[🇺🇸 English](./README.md) | [🇨🇳 简体中文](./README.zh-Hans.md)
+[🇺🇸 English](./README.md) | [🇨🇳 简体中文](./README.zh-CN.md)
 ```
 
-Required root file layout for en + zh-Hans:
+Required root file layout for en + zh-CN:
 
 ```text
 README.md               ← default (English)
-README.zh-Hans.md
+README.zh-CN.md
 ```
 
 Rules:

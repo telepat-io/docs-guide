@@ -218,7 +218,7 @@ flowchart TD
 
 <one-sentence value proposition>
 
-[🇺🇸 English](./README.md) | [🇨🇳 简体中文](./README.zh-Hans.md)
+[🇺🇸 English](./README.md) | [🇨🇳 简体中文](./README.zh-CN.md)
 
 <badges>
 
@@ -270,11 +270,11 @@ For each template above:
 
 ## README i18n file layout template
 
-For multilingual repos using en + zh-Hans:
+For multilingual repos using en + zh-CN:
 
 ```text
 README.md               ← default (English)
-README.zh-Hans.md
+README.zh-CN.md
 ```
 
 ## Docusaurus config template (standard profile)
@@ -288,7 +288,7 @@ const config = {
   baseUrl: process.env.DOCS_LOCAL === 'true' ? '/' : (process.env.DOCS_BASE_URL || '/project/'),
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans']
+    locales: ['en', 'zh-CN']
   },
   trailingSlash: false,
   onBrokenLinks: 'throw',
@@ -342,7 +342,7 @@ docs/
   ... English canonical docs
 
 i18n/
-  zh-Hans/
+  zh-CN/
     docusaurus-plugin-content-docs/
       current/
         ... translated docs

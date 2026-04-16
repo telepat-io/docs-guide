@@ -18,7 +18,7 @@ See [principles.md](./principles.md) for the full principle taxonomy.
 Projects adopting this standard should ship at least two locales:
 
 1. English (default locale): `en`
-2. Simplified Chinese: `zh-Hans` (preferred)
+2. Simplified Chinese: `zh-CN` (preferred)
 
 ## Required content baseline
 
@@ -32,7 +32,7 @@ docs/
   ... English canonical docs
 
 i18n/
-  zh-Hans/
+  zh-CN/
     docusaurus-plugin-content-docs/
       current/
         ... translated docs
@@ -50,27 +50,27 @@ Use explicit i18n config in `docusaurus.config`:
 ```js
 i18n: {
   defaultLocale: 'en',
-  locales: ['en', 'zh-Hans']
+  locales: ['en', 'zh-CN']
 }
 ```
 
 ## URL path guidance
 
 - Docusaurus default locale (`en`) is served without locale prefix.
-- Non-default locale (`zh-Hans`) is served with locale prefix by default.
+- Non-default locale (`zh-CN`) is served with locale prefix by default.
 
 Example:
 
 - English: `/getting-started/quickstart`
-- Chinese: `/zh-Hans/getting-started/quickstart`
+- Chinese: `/zh-CN/getting-started/quickstart`
 
-If your product requires a short path like `/cn/...`, you may use locale key `cn` instead of `zh-Hans`, but set `htmlLang: 'zh-CN'` and document the exception.
+If your project still uses legacy locale key `zh-Hans`, document the exception and provide a migration note toward `zh-CN`.
 
 ## Dev vs production locale behavior
 
 - Docusaurus dev mode typically serves one locale at a time.
 - Production build output should include all configured locales.
-- Teams should document this behavior to prevent false bug reports when `/zh-Hans/...` appears unavailable during single-locale dev sessions.
+- Teams should document this behavior to prevent false bug reports when `/zh-CN/...` appears unavailable during single-locale dev sessions.
 
 Recommended root scripts:
 
@@ -78,7 +78,7 @@ Recommended root scripts:
 {
   "scripts": {
     "docs:start:en": "npm --prefix docs-site run start -- --locale en",
-    "docs:start:zh": "npm --prefix docs-site run start -- --locale zh-Hans",
+    "docs:start:zh": "npm --prefix docs-site run start -- --locale zh-CN",
     "docs:preview:all-locales": "npm run docs:build && npm run docs:serve"
   }
 }
@@ -104,7 +104,7 @@ Recommended root scripts:
 
 ## Quality checks for i18n
 
-1. Locale config includes `en` and `zh-Hans` (or documented `cn` exception).
+1. Locale config includes `en` and `zh-CN` (or documented legacy `zh-Hans` exception).
 2. Core docs categories exist in both locales.
 3. Navbar/footer labels are translated.
 4. Broken links check passes in both locale builds.

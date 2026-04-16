@@ -67,7 +67,7 @@ Recommended i18n block:
 ```js
 i18n: {
   defaultLocale: 'en',
-  locales: ['en', 'zh-Hans']
+  locales: ['en', 'zh-CN']
 }
 ```
 
