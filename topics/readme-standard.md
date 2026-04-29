@@ -13,33 +13,70 @@ Keep README concise, user-centered, and useful as a front door to the project.
 
 See [principles.md](./principles.md) for the full principle taxonomy.
 
+## Header layout
+
+Center the following elements at the top of the README, in this order:
+
+1. Logo image
+2. Project title (`h1`)
+3. Horizontal rule (`<hr>`)
+4. One-sentence subtitle / tagline
+5. Documentation links (one link per available language)
+6. Badges
+
+Keep all content below the header block left-aligned.
+
+Example:
+
+```html
+<p align="center"><img src="./project-logo.webp" width="128" alt="Project"></p>
+<h1 align="center">Project</h1>
+<hr>
+<p align="center"><em>One-sentence value proposition.</em></p>
+
+<p align="center">
+  <a href="https://docs.telepat.io/project">📖 Docs</a>
+  · <a href="./README.md">🇺🇸 English</a>
+  · <a href="./README.zh-CN.md">🇨🇳 简体中文</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/telepat-io/project/actions/workflows/ci.yml"><img src="https://github.com/telepat-io/project/actions/workflows/ci.yml/badge.svg?branch=main" alt="Build"></a>
+  <a href="https://codecov.io/gh/telepat-io/project"><img src="https://codecov.io/gh/telepat-io/project/graph/badge.svg" alt="Codecov"></a>
+  <a href="https://www.npmjs.com/package/@telepat/project"><img src="https://img.shields.io/npm/v/@telepat/project" alt="npm"></a>
+  <a href="https://github.com/telepat-io/project/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License"></a>
+</p>
+```
+
 ## Required section order
 
-1. Project name and one-sentence value proposition
-2. Language switcher block (required for multilingual repos)
-3. Badges
-4. What it solves and primary use cases
-5. Quick start (fastest working path)
-6. Requirements
-7. How it works (high-level)
-8. Security and trust
-9. Links to full docs and support
-10. Contributing (short pointer)
-11. License
+1. Header block (logo, title, subtitle, docs links, badges)
+2. What it solves and primary use cases
+3. Quick start (fastest working path)
+4. Requirements
+5. How it works (high-level)
+6. Security and trust
+7. Links to full docs and support
+8. Contributing (short pointer)
+9. License
 
 ## README i18n requirement
 
-For multilingual repositories, add a language switcher link block at the top of the README (directly below project title/value proposition).
+For multilingual repositories, include language links inside the centered docs-links paragraph in the header block.
 
 Required baseline locales:
 
 - English (default): `README.md`
 - Simplified Chinese: `README.zh-CN.md`
 
-Required top-of-file switcher example for en + zh-CN:
+Required header docs-links example for en + zh-CN:
 
-```md
-[🇺🇸 English](./README.md) | [🇨🇳 简体中文](./README.zh-CN.md)
+```html
+<p align="center">
+  <a href="https://docs.telepat.io/project">📖 Docs</a>
+  · <a href="./README.md">🇺🇸 English</a>
+  · <a href="./README.zh-CN.md">🇨🇳 简体中文</a>
+</p>
 ```
 
 Required root file layout for en + zh-CN:
@@ -57,18 +94,19 @@ Rules:
 
 ## Badges policy
 
-Recommended badges:
+Required badges (in order):
 
-- Build or CI status
-- Test coverage (if available)
-- Package version (if published)
-- License
+1. **Build** — CI status
+2. **Codecov** — Test coverage
+3. **npm** — Package version (if published)
+4. **License**
 
 Rules:
 
-- Keep badge count small (usually 4 to 7).
+- Keep badge count small (exactly these four by default).
 - Prefer meaningful health badges over vanity badges.
 - Badges must link to trustworthy first-party sources.
+- Place badges inside the centered header block, below the docs links.
 
 ## Quick start rules
 
