@@ -55,10 +55,11 @@ Example:
 3. Quick start (fastest working path)
 4. Requirements
 5. How it works (high-level)
-6. Security and trust
-7. Links to full docs and support
-8. Contributing (short pointer)
-9. License
+6. Using With AI Agents
+7. Security and trust
+8. Links to full docs and support
+9. Contributing (short pointer)
+10. License
 
 ## README i18n requirement
 
@@ -91,6 +92,7 @@ Rules:
 - Keep links relative and root-local.
 - Keep section structure aligned across locale files.
 - If one locale is temporarily incomplete, add an explicit TODO marker in that locale file instead of silent drift.
+- All sections, including "Using With AI Agents", must exist in every locale file.
 
 ## Badges policy
 
@@ -122,6 +124,27 @@ Explicitly state:
 - Required runtime versions.
 - Required external tools.
 
+## Using With AI Agents
+
+Every project README must include this section, positioned after "How it works" and before "Security and trust."
+
+Purpose:
+
+- Explain why the project is compelling for agentic use.
+- Surface MCP servers, agent-specific CLI commands, non-interactive/automation flags, and skill packages.
+- Link to agent-specific documentation under `docs/for-agents/` or equivalent.
+
+Required content (include all that apply):
+
+1. **MCP server** — command to start, transport (stdio/sse), number of tools, and a link to MCP docs.
+2. **Agent CLI commands** — commands designed for automation (for example `--json`, `--non-interactive`, `agent status`).
+3. **Non-interactive / CI mode** — flags or environment variables that remove interactive prompts.
+4. **Skill packages** — installable skill directories and where to place them.
+5. **Programmatic API** — HTTP/WebSocket endpoints, OpenAPI specs, or direct integration paths.
+6. **Agent docs entrypoint** — link to `https://docs.telepat.io/<project>/for-agents` or equivalent.
+
+Tone should be concise and action-oriented. Avoid vague marketing language; show runnable commands.
+
 ## Security section
 
 Include:
@@ -137,12 +160,44 @@ Include:
 - Visuals must support prose, never replace it.
 - Do not use tracking pixels or hidden analytics in README.
 
+## Clickable links policy
+
+All documentation links inside the README must be full, clickable URLs pointing to the published docs site.
+
+Rules:
+
+- Use `https://docs.telepat.io/<project>/...` for all cross-file doc references.
+- Do not use relative file paths (for example `docs/getting-started/quickstart.md`) in the README body.
+- Relative paths are permitted only inside the header block for language-switch links (for example `./README.zh-CN.md`).
+- Verify that every URL resolves correctly before committing.
+
+Example:
+
+```markdown
+- [Quickstart](https://docs.telepat.io/project/getting-started/quickstart)
+- [CLI reference](https://docs.telepat.io/project/reference/cli-reference)
+```
+
+## Appeal and persuasion guidelines
+
+The README is the front door. Make it compelling:
+
+- Lead with a clear, concrete value proposition (not abstract marketing).
+- Keep the intro scannable: bullets over paragraphs where possible.
+- Use the tagline to communicate differentiation.
+- End sections with a clear next step or link.
+- Avoid walls of text: if a section exceeds ~15 lines, move detail to docs and link there.
+- Every project README should make a user want to install within 60 seconds.
+
 ## Common anti-patterns
 
 - Marketing-heavy intro with no runnable quickstart.
 - Walls of badges or decorative emojis.
 - Image-only feature explanations.
 - Missing requirements or missing license link.
+- Broken or non-clickable documentation links.
+- Missing "Using With AI Agents" section.
+- Excessive detail that belongs in the docs site rather than the README.
 
 ## 60-second skim test
 
@@ -152,7 +207,9 @@ A new visitor should answer all in under 60 seconds:
 2. Is this for me?
 3. How do I run it now?
 4. Where is the full documentation?
+5. How do I use it with an AI agent?
 
 ## Related standards
 
 - [principles.md](./principles.md)
+- [ai-agent-navigation.md](./ai-agent-navigation.md)
